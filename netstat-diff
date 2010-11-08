@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Purpose:	show difference between two runs of netstat
+# Usage:	netstat-diff
+# Example:	netstat-diff
+# Responsible:	Stephan Rosenke <rosenke@ulb.tu-darmstadt.de>
+# License:	CC-BY-SA 3.0 unported
+# Version:	2010-11-08
+
+#set some user serviceable vars
+
+################################################################################
+# DO NOT MESS BEHIND THIS LINE #################################################
+################################################################################
+
+#set some non-user serviceable vars
+
