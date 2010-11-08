@@ -8,10 +8,50 @@
 # Version:	2010-11-08
 
 #set some user serviceable vars
+diff="/usr/bin/diff"
+diff_options="-u"
+netstat="/bin/netstat"
+netstat_options="-tulpen"
 
 ################################################################################
 # DO NOT MESS BEHIND THIS LINE #################################################
 ################################################################################
 
 #set some non-user serviceable vars
+scriptname=$(basename $0)
+current="/var/log/${scriptname}_current"
+old="/var/log/${scriptname}_old"
+
+#functions
+check_binary () {
+ if [ ! -x "${1}" ] ; then
+  echo "${1} does not exist ... exiting"
+  exit 1
+ fi
+}
+netstat_current () {
+ "${netstat}" "${netstat_options}" >"${current}"
+}
+
+#check if binaries exist
+for i in ${diff} ${netstat} ; do
+ check_binary "${i}"
+done
+
+#
+#main
+#
+
+#check if $current exists otherwise touch it
+test -e "${current}" || touch "${current}"
+#check if $old exists, rm it
+test -O "${old}" && rm "${old}"
+#mv $current to $old
+test -e "${old}" || mv "${current}" "${old}"
+
+#dump netstat with current data
+netstat_current
+
+#show differences
+"${diff}" "${diff_options}" "${current}" "${old}"
 
