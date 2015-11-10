@@ -53,5 +53,5 @@ test -e "${old}" || mv "${current}" "${old}"
 netstat_current
 
 #show differences
-"${diff}" "${diff_options}" "${current}" "${old}"
+"${diff}" "${diff_options}" "${old}" "${current}"
 
