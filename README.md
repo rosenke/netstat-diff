@@ -6,9 +6,9 @@ quick'n'dirty version of tiger <http://www.nongnu.org/tiger/>.
 
 # AUTHOR
 
-Stephan Rosenke <rosenke@ulb.tu-darmstadt.de>
+Stephan Rosenke <r01-571@r0s.de>
 
 # LICENSE
 
-CC-BY-SA 3.0 unported
+CC BY-SA 4.0
 
