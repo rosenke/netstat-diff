@@ -16,5 +16,5 @@ CC BY-SA 4.0
 
 ## LINKS
 
-# [Sourcecode at github](https://github.com/rosenke/netstat-diff)
-# [Sourcecode at zenodo](https://doi.org/10.5281/zenodo.889039)
+1. [Sourcecode at github](https://github.com/rosenke/netstat-diff)
+2. [Sourcecode at zenodo](https://doi.org/10.5281/zenodo.889039)
