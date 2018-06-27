@@ -5,7 +5,7 @@
 # Example:	netstat-diff
 # Responsible:	Stephan Rosenke <r01-571@r0s.de>
 # License:	CC BY-SA 4.0
-# Version:	2015-11-10
+# Version:	2018-06-27
 
 #set some user serviceable vars
 diff="/usr/bin/diff"
