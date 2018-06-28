@@ -5,11 +5,14 @@
 # Example:	netstat-diff
 # Responsible:	Stephan Rosenke <r01-571@r0s.de>
 # License:	CC BY-SA 4.0
-# Version:	2015-11-10
+# Version:	2018-06-27
 
 #set some user serviceable vars
 diff="/usr/bin/diff"
 diff_options="-u"
+egrep="/bin/egrep"
+egrep_options="--invert-match"
+egrep_pattern="^.+ 0\.0\.0\.0:(80|443) .+/apache2 *$"
 netstat="/bin/netstat"
 netstat_options="-tulpen"
 
@@ -30,11 +33,12 @@ check_binary () {
  fi
 }
 netstat_current () {
- "${netstat}" "${netstat_options}" >"${current}"
+ "${netstat}" "${netstat_options}" | \
+  "${egrep}" "${egrep_options}" "${egrep_pattern}" >"${current}"
 }
 
 #check if binaries exist
-for i in ${diff} ${netstat} ; do
+for i in ${diff} ${egrep} ${netstat} ; do
  check_binary "${i}"
 done
 
@@ -54,4 +58,3 @@ netstat_current
 
 #show differences
 "${diff}" "${diff_options}" "${old}" "${current}"
-
