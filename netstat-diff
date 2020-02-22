@@ -12,7 +12,7 @@ diff="/usr/bin/diff"
 diff_options="-u"
 egrep="/bin/egrep"
 egrep_options="--invert-match"
-egrep_pattern="^.+ 0\.0\.0\.0:(80|443) .+/apache2 *$"
+egrep_pattern="^.+ (0\.0\.0\.0|::):(80|443) .+/apache2 *$"
 netstat="/bin/netstat"
 netstat_options="-tulpen"
 
